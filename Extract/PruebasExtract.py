@@ -1,11 +1,14 @@
 import requests
-url = "https://ipinfo.io/190.60.194.114/json"
+import pandas as pd
+import numpy as np
 
-try: 
-    response = requests.get(url)
-    data = response.json()
-    print (data)
+class PruebaEstractor:
 
-except:
-    print ("ERROR PENDEJO, ESTUPIDO, SIN AMIGOS DE MIERDA...")
-    print ("Vuelva mas tarde 😊")
+    def __init__(self, csv_paht):
+        self.csv_paht = csv_paht
+
+    def queries(self):
+        data = pd.read_csv(self.csv_paht)
+
+    def response():
+        return data.head(5)
