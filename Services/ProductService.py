@@ -12,7 +12,7 @@ class ProductService:
 
     @staticmethod
     def create_product(data):
-        print(data)  # Agrega esta línea para depurar
+        print(data)
         new_product = Product(
             name=data['name'],
             description=data['description'],
