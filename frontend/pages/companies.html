@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresas - Sistema de Inventario</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <div class="nav-bar">
+                <h2>🏢 Mis Empresas</h2>
+                <div>
+                    <button onclick="showProfile()" class="btn">👤 Mi Perfil</button>
+                    <button onclick="logout()" class="btn">🚪 Salir</button>
+                </div>
+            </div>
+            
+            <div id="alert" class="hidden"></div>
+            
+            <!-- Companies List -->
+            <div class="card">
+                <h3>Empresas a las que perteneces</h3>
+                <div id="companiesList" class="loading">Cargando empresas...</div>
+            </div>
+            
+            <!-- Create Company -->
+            <div class="card">
+                <h3>Crear Nueva Empresa</h3>
+                <form id="createCompanyForm">
+                    <div class="form-group">
+                        <label for="company_name">Nombre de la Empresa</label>
+                        <input type="text" id="company_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company_description">Descripción</label>
+                        <textarea id="company_description" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Crear Empresa</button>
+                </form>
+            </div>
+            
+            <!-- Join Company -->
+            <div class="card">
+                <h3>Unirse a Empresa Existente</h3>
+                <form id="joinCompanyForm">
+                    <div class="form-group">
+                        <label for="unique_code">Código Único de la Empresa</label>
+                        <input type="text" id="unique_code" placeholder="XXXXXXXX" required>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Unirse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/config.js"></script>
+    <script src="../js/companies.js"></script>
+</body>
+</html>

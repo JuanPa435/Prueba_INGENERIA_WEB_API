@@ -4,3 +4,16 @@ instance/
 venv/
 env/
 .venv/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.DS_Store
+.idea/
+.vscode/
+*.log

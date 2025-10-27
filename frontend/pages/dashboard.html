@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Sistema de Inventario</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <div class="nav-bar">
+                <h2 id="companyName">Dashboard</h2>
+                <div>
+                    <button onclick="location.href='companies.html'" class="btn">🏢 Empresas</button>
+                    <button onclick="showProfile()" class="btn">👤 Perfil</button>
+                    <button onclick="logout()" class="btn">🚪 Salir</button>
+                </div>
+            </div>
+            
+            <div id="alert" class="hidden"></div>
+            
+            <!-- Admin Panel -->
+            <div id="adminPanel" class="hidden">
+                <div class="card">
+                    <h3>👥 Panel de Administración</h3>
+                    <button onclick="showEmployees()" class="btn btn-primary">Ver Empleados</button>
+                </div>
+            </div>
+            
+            <!-- Products Section -->
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3>📦 Productos</h3>
+                    <button onclick="openAddProductModal()" class="btn btn-success">+ Agregar Producto</button>
+                </div>
+                <div id="productsList" class="loading">Cargando productos...</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add/Edit Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Agregar Producto</h2>
+                <span class="close" onclick="closeProductModal()">&times;</span>
+            </div>
+            <form id="productForm">
+                <input type="hidden" id="product_id">
+                <div class="form-group">
+                    <label for="product_name">Nombre</label>
+                    <input type="text" id="product_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product_description">Descripción</label>
+                    <textarea id="product_description" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="product_price">Precio</label>
+                    <input type="number" id="product_price" step="0.01" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="product_quantity">Cantidad</label>
+                    <input type="number" id="product_quantity" min="0" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Employees Modal -->
+    <div id="employeesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>👥 Empleados</h2>
+                <span class="close" onclick="closeEmployeesModal()">&times;</span>
+            </div>
+            <div id="employeesList" class="loading">Cargando empleados...</div>
+        </div>
+    </div>
+    
+    <script src="../js/config.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>
