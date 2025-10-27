@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     currentCompany = getSelectedCompany();
     
     if (!currentCompany) {
-        window.location.href = '/pages/companies.html';
+        window.location.href = './companies.html';
         return;
     }
     

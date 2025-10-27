@@ -61,7 +61,7 @@ function isAuthenticated() {
 // Redirect to login if not authenticated
 function requireAuth() {
     if (!isAuthenticated()) {
-        window.location.href = '/pages/login.html';
+        window.location.href = './login.html';
         return false;
     }
     return true;
@@ -72,16 +72,12 @@ function logout() {
     removeToken();
     removeUserData();
     removeSelectedCompany();
-    window.location.href = '/pages/login.html';
+    window.location.href = './login.html';
 }
 
 // Show profile
 function showProfile() {
-    // For now, just show an alert with user info
-    const user = getUserData();
-    if (user) {
-        alert(`Usuario: ${user.username}\nEmail: ${user.email}`);
-    }
+    window.location.href = './profile.html';
 }
 
 // Make authenticated API request

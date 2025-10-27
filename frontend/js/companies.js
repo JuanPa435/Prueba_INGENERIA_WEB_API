@@ -107,5 +107,5 @@ async function loadCompanies() {
 
 function selectCompany(id, name, role) {
     setSelectedCompany({ id, name, role });
-    window.location.href = '/pages/dashboard.html';
+    window.location.href = './dashboard.html';
 }

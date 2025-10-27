@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Redirect if already authenticated
     if (isAuthenticated()) {
-        window.location.href = '/pages/companies.html';
+        window.location.href = './companies.html';
         return;
     }
     
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Redirect to companies page
             setTimeout(() => {
-                window.location.href = '/pages/companies.html';
+                window.location.href = './companies.html';
             }, 1500);
             
         } catch (error) {
